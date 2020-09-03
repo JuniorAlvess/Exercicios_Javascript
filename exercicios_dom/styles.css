@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.692);
+    height: 90px;
+
+    border-bottom: 1px solid #f2f2f2;
+
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    align-items: center;
+
+    color: #dddbdb;
+
+    font-size: 1.1rem;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+}
+
+header h1 {
+    margin: 0 auto;
+}
+
+header a {
+    background: #f2f2f2;
+    color: gray;
+
+    margin-left: 0.5rem;
+    margin-top: 3rem;
+    padding: 0.1rem;
+
+    border: 1px solid snow;
+    border-radius: 0.5rem;
+    
+    text-decoration: none;
+    transition: filter 0.3s;
+}
+
+header a:hover {
+    filter: brightness(1.2);
+}
+
+main {
+    background: #f2f2f2;
+    color:  #404040;
+    width: 85vw;
+    height: 70vh;
+
+    /* text-align: center; */
+
+    margin: 10px auto;
+    padding: 1.0rem;
+
+    border-radius: 0.5rem;
+    box-shadow: inset 0 0 0.5em #333;
+
+    overflow-y: hidden;
+}
+main:hover {
+    overflow-y: scroll;
+}
+
+
+::-webkit-scrollbar {
+    width: 0.8vw;
+
+    border-radius: 10px;
+    background-color: #aaa9a9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #737373;
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #929292;
+}
+
+main h1 {
+    text-align: center;
+    text-decoration: underline #333;
+
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+}
+
+main h2 {
+    margin-top: 3rem;
+    max-width: 60rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+}
+
+main span, main p{
+    display: inline-block;
+    background: #737373;
+    color: #dddbdb;
+
+    max-width: 50rem;
+    min-height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+
+    margin-top: 2rem;
+    padding: 5px;
+
+    border-radius: 0.6rem;
+
+    box-shadow: inset 0 0 1em #333;
+}
+
+p.dica {
+    color: #0000cc;
+    background: none;
+
+    position: relative;
+    right: 4.5rem;
+    margin-top: 0;
+
+    box-shadow: none;
+}
+
+main button {
+    background: blue;
+    color: #dddbdb;
+    margin-top: 3rem;
+    padding: 0.5rem;
+
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+
+    border: 0.1rem solid blue;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    outline: none;
+    transition: background 0.3s;
+    transition: box-shadow 0.3s;
+}
+
+
+main button:hover {
+    background: #0000cc;
+}
+main button:focus {
+    background: #0000cc;
+    box-shadow: 0 3px #8c8c8c;
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.692);
+    color: #f2f2f2;
+
+    height: 8.5vh;
+
+    text-align: center;
+}
+
+footer  p {
+    position: relative;
+    top: 2.0rem;
+}
+
+footer a {
+    color: #000;
+
+    text-decoration: none;
+}
+
+footer a:hover {
+    filter: opacity(70%);
+}

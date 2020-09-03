@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 05</title>
+    <link rel="stylesheet" href="../global.css">
+</head>
+
+<body>
+    <header>
+        <a href="../../index.html">voltar</a>
+        <h1>Desafios Rocketseat</h1>
+    </header>
+    <main>
+        <h1>5º exercício</h1>
+        <h2>Dado o seguinte vetor de objetos:</h2>
+        <span>
+            var usuarios = [
+            {
+            nome: "Diego",
+            habilidades: ["Javascript", "ReactJS", "Redux"]
+            },
+            {
+            nome: "Gabriel",
+            habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+            }
+            ];
+        </span>
+        <h2>Escreva uma função que produza o seguinte resultado:</h2>
+        <span>
+            O Diego possui as habilidades: Javascript, ReactJS, Redux
+            O Gabriel possui as habilidades: VueJS, Ruby on Rails, Elixir
+        </span>
+        <a href="#showScript">
+            <button id="show" onclick="showAllresults()">Ver resultado</button>
+        </a>
+        <br>
+        <span id="showScript"></span>
+        <span id="showResult"></span>
+    </main>
+
+    <footer>
+        <p>Developed by <a href="#" target="_blank">Junior Alves</a>.</p>
+    </footer>
+
+    <script>
+        function showUser(mensagem = "Abra o console do browser para visualizar.") {
+            usuarios.forEach(user => {
+                console.log(`O ${user.nome} possui as habilidades: ${user.habilidades}`)
+            })
+
+            return mensagem
+        }
+
+        var usuarios = [{
+                nome: "Diego",
+                habilidades: ["Javascript", "ReactJS", "Redux"]
+            },
+            {
+                nome: "Gabriel",
+                habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+            }
+        ];
+        console.log(showUser())
+
+        const script = document.getElementById('showScript')
+        script.style.display = 'none'
+        script.innerHTML = showUser
+
+        const result = document.getElementById('showResult')
+        result.style.display = 'none'
+        result.innerHTML = showUser()
+
+        function showAllresults() {
+            const button = document.getElementById('show')
+
+            button.onclick = script.style.display = 'block'
+            button.onclick = script.style.padding = '15px'
+            button.onclick = result.style.display = 'block'
+            button.onclick = result.style.padding = '15px'
+        }
+    </script>
+</body>
+
+</html>

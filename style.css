@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.692);
+    height: 90px;
+
+    border-bottom: 1px solid #f2f2f2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #dddbdb;
+
+    font-size: 1.1rem;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+}
+
+main {
+    background: #f2f2f2;
+
+    width: 85vw;
+    height: 70vh;
+
+    margin: 10px auto;
+    padding: 1.0rem;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; 
+    gap: 1.0rem;
+
+
+    border-radius: 0.5rem;
+    box-shadow: inset 0 0 0.5em #333;
+
+    overflow: hidden;
+}
+
+main:hover {
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 0.8vw;
+
+    border-radius: 10px;
+    background-color: #aaa9a9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #737373;
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #929292;
+}
+
+.linksContent {
+    /* background-color: #e6e6e6; */
+    background: lightblue;
+    width: 300px;
+    min-height: 300px;
+
+    text-align: center;
+
+    border: 1px solid grey;
+    border-radius: 1.5rem;
+
+    /* padding: 10px; */
+
+}
+
+.linksContent h2 {
+    background: blue;
+    color: #f2f2f2;
+
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+
+    /* border: 1px solid black; */
+    border-radius: 1.5rem 1.5rem 0 0;
+}
+
+.linksContent .link {
+    width: calc(100% - 30px);
+
+    margin: 0 auto;
+    padding: 5px;
+
+    font-size: 1.4rem;
+    font-weight: 400;
+    font-family: "Roboto";
+
+    /* border-top: 1px solid grey; */
+    border-bottom: 1px solid grey;
+}
+
+.linksContent .link a {
+    color: rgb(73, 72, 72);
+    text-decoration: none;
+}
+
+.linksContent .link a:hover {
+    filter: brightness(1.8);
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.692);
+    color: #f2f2f2;
+
+    min-height: 13.5vh;
+    text-align: center;
+}
+
+footer  p {
+    position: relative;
+    top: 4.0rem;
+}
+
+footer a {
+    color: #000;
+
+    text-decoration: none;
+}
+
+footer a:hover {
+    filter: opacity(70%);
+}

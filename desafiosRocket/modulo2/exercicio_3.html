@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 03</title>
+    <link rel="stylesheet" href="../global.css">
+    <style>
+        /* ul {
+            background: #000;
+        } */
+        /* li {
+            color: #000;
+        } */
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="../../index.html">voltar</a>
+        <h1>Desafios Rocketseat</h1>
+    </header>
+    <main>
+        <h1>3° execício</h1>
+        <h2>
+            A partir do seguinte vetor:
+        </h2>
+        <span>
+            var nomes = ["Diego", "Gabriel", "Lucas"];
+        </span>
+
+        <h2>
+            Preencha uma lista (ul) no HTML com os itens da seguinte forma:
+        </h2>
+
+        <span>
+            ● Diego
+            ● Gabriel
+            ● Lucas
+        </span>
+        <a href="#showScript" onclick="showAllresults()">
+            <button id="show">Ver script</button>
+        </a>
+        <a href="#list" onclick="showList()">
+            <button id="show">Preencher lista</button>
+        </a>
+        <br>
+        <span id="showScript"></span>
+        <span>
+            <ul id="list">
+
+            </ul>
+        </span>
+    </main>
+
+    <footer>
+        <p>Developed by <a href="#" target="_blank">Junior Alves</a>.</p>
+    </footer>
+
+    <script>
+        // function showList() {
+        //     var nomes = ["Diego", "Gabriel", "Lucas"];
+        //     var createList = document.getElementById('list')
+
+        //     nomes.forEach(function (nome, index) {
+        //         createList.innerHTML += `<li> ${nome} </li>`
+        //     })
+        // }
+
+        function showList() {
+            var nomes = ["Diego", "Gabriel", "Lucas"];
+
+            var createList = document.getElementById('list')
+       
+            nomes.forEach(function (nome, index) {
+                var lista = document.createElement("li")
+                createList.appendChild(lista)
+                lista.innerText = nome
+            })
+        }
+
+
+        const script = document.getElementById('showScript')
+        script.style.display = 'none'
+        script.innerHTML = showList
+
+        const result = document.getElementById('create')
+        result.style.display = 'none'
+        // result.innerHTML = createNewSquare() 
+
+        function showAllresults() {
+            const button = document.getElementById('show')
+
+            button.onclick = script.style.display = 'inline-block'
+            button.onclick = script.style.padding = '15px'
+            // button.onclick = result.style.display = 'inline-block'
+            // button.onclick = result.style.padding = '15px'
+        }
+    </script>
+</body>
+
+</html>

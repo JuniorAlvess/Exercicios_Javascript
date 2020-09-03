@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02</title>
+    <link rel="stylesheet" href="../global.css">
+</head>
+
+<body>
+    <header>
+        <a href="../../index.html">voltar</a>
+        <h1>Desafios Rocketseat</h1>
+    </header>
+    <main>
+        <h1>2° execício</h1>
+        <h2>Crie uma função que dado um intervalo (entre x e y) exiba todos número pares:</h2>
+        <span>
+            function pares(x, y) {
+            // código aqui
+            }
+            pares(32, 321);
+        </span>
+
+        <a href="#showScript">
+            <button id="show" onclick="showAllresults()">Ver resultado</button>
+        </a>
+        <br>
+        <span id="showScript"></span>
+        <span id="showResult"></span>
+    </main>
+
+    <footer>
+        <p>Developed by <a href="#" target="_blank">Junior Alves</a>.</p>
+    </footer>
+
+    <script>
+        function pares(x = 32, y = 1000) { 
+            for(;x <= y; x++) {
+                console.log(x)
+                x++
+            }
+        }
+
+        const script = document.getElementById('showScript')
+        script.style.display = 'none'
+        script.innerHTML = pares
+
+        const result = document.getElementById('showResult')
+        result.style.display = 'none'
+        result.innerHTML = pares() + " Abra o console do browser para vizualizar"
+
+        function showAllresults() {
+            const button = document.getElementById('show')
+
+            button.onclick = script.style.display = 'inline-block'
+            button.onclick = script.style.padding = '15px'
+            button.onclick = result.style.display = 'inline-block'
+            button.onclick = result.style.padding = '15px'
+        }
+    </script>
+</body>
+
+</html>

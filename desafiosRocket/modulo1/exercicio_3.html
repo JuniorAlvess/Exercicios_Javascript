@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03</title>
+    <link rel="stylesheet" href="../global.css">
+</head>
+
+<body>
+    <header>
+        <a href="../../index.html">voltar</a>
+        <h1>Desafios Rocketseat</h1>
+    </header>
+    <main>
+        <h1>3º exercício</h1>
+        <h2>Escreva uma função que verifique se o vetor de habilidades passado possui a habilidade "Javascript"
+            e retorna um booleano true/false caso exista ou não.</h2>
+        <span>
+            function temHabilidade(skills) {
+            // código aqui
+            }
+            var skills = ["Javascript", "ReactJS", "React Native"];
+            temHabilidade(skills); // true ou false
+        </span>
+        <p class="dica">Dica: para verificar se um vetor contém um valor, utilize o método indexOf().
+        </p>
+
+        <a href="#showScript">
+            <button id="show" onclick="showAllresults()">Ver resultado</button>
+        </a>
+        <br>
+        <span id="showScript"></span>
+        <span id="showResult"></span>
+    </main>
+
+    <footer>
+        <p>Developed by <a href="#" target="_blank">Junior Alves</a>.</p>
+    </footer>
+
+    <script>
+        // como burcar sem o indexOf()
+        // skills.forEach(element => {
+        //     if (element === "Javascript") {
+        //         return verdadeiro
+        //     } else {
+        //         return false
+        //     }
+        // 
+        //  var skills = ["Javascript", "React.js", "React Native"];
+        function temHabilidades() {
+            if (skills.indexOf("Javascript") >= 0) {
+                console.log(true)
+                return true
+            } else {
+                console.log(false)
+                return false
+            }
+        }
+        var skills = ["Javascript", "React.js", "React Native"];
+        const script = document.getElementById('showScript')
+        script.style.display = 'none'
+        script.innerHTML = temHabilidades
+
+        const result = document.getElementById('showResult')
+        result.style.display = 'none'
+        result.innerHTML = temHabilidades()
+
+        function showAllresults() {
+            const button = document.getElementById('show')
+
+            button.onclick = script.style.display = 'block'
+            button.onclick = script.style.padding = '15px'
+            button.onclick = result.style.display = 'block'
+            button.onclick = result.style.padding = '15px'
+        }
+    </script>
+</body>
+
+</html>

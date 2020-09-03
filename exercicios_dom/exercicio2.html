@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <header>
+        <a href="../../index.html">voltar</a>
+        <h1>Exercícios Dom</h1>
+    </header>
+    <main>
+        <h1>2° execício</h1>
+        <h2>
+            Crie um botão que ao ser clicado aparece
+            um número aleatório entre 0 e 50
+        </h2>
+
+        <button id="btn">Ver mensagem</button>
+        <span id="show"></span>
+    </main>
+
+    <footer>
+        <p>Developed by <a href="#" target="_blank">Junior Alves</a>.</p>
+    </footer>
+
+    <script>
+        const botao = document.getElementById('btn')
+
+        function number() {
+            const num = 50
+            const numRandom = Math.round(Math.random() * num)
+
+            const showNum = document.getElementById("show")
+            showNum.innerHTML = numRandom
+        }
+
+        botao.addEventListener("click", number)
+    </script>
+</body>
+
+</html>
