@@ -1,0 +1,20 @@
+npm init -y => Inicializa um novo projeto
+npm start => inicia o servidor
+npm ls --depth=0 => lista todos os pacotes instalados
+npm outdated => lista os pacotes desatualizados
+npm install => instala pacotes
+npm install -D => instala pacotes de desenvolvimento 
+npm install --save-prod => instala pacotes de produção
+npm install -g => instala pacotes globais
+npm uninstall "nome do pacote" => desinstala pacotes
+npm update => atualiza pacotes
+npm install -g nodemon => instala nodemon
+npm list => lista pacotes instalados
+npm test => testa o servidor
+npm run build => compila o servidor
+npm run dev => inicia o servidor
+npm run build-prod => compila o servidor
+npm run build-dev => compila o servidor
+npm install -E => instala uma versão específica do pacote, e não podera ser atualizada
+npm install ^ => instala uma versão do pacote e somente o "minor" e "patch" poderão ser atualizados
+
