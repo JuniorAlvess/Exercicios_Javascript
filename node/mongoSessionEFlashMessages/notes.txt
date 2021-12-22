@@ -1,0 +1,2 @@
+npm install dotenv => para criar variaveis de ambientes
+npm install mongoose => para conectar com o banco de dados
