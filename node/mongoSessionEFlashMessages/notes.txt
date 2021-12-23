@@ -1,2 +1,5 @@
 npm install dotenv => para criar variaveis de ambientes
 npm install mongoose => para conectar com o banco de dados
+npm i express-sessions => armazena os dados da sessão no servidor
+npm i connect-mongo => conecta com o mongo
+npm i connect-flash => para exibir mensagens de erro
