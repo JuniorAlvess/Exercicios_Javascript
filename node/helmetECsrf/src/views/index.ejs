@@ -2,6 +2,7 @@
 <section class="container">
   <h1> titulo </h1>
   <form action="/" method="post">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>"> <!-- Gera um token randômico sempre que a pagina é atualizada -->
     <label>Cliente</label>
     <input type="text" name="cliente" />
     <button>Submit</button>
