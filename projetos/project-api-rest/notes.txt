@@ -1,0 +1,17 @@
+npx eslint --init -> para instalar o eslint
+npm i nodemon sucrase --D - sucrase -> Permite a utilização import e export do javascript
+
+
+Guia de estilos airbnb -> https://github.com/airbnb/javascript
+
+
+O Sequelize é um ORM(Object/Relational Mapper) baseado em Promise para Node.js e io.js,
+e suporta os dialetos PostgreSQL, MySQL, MariaDB, SQLite e MSSQL e recursos a transação,
+relacionamentos, replicação de leitura e muito mais.
+
+npm i sequelize mariadb -> estalando com mariaDB
+npm i -D sequelize-cli -> para criar um banco de dados e gerar modelos, migrações
+
+comandos:
+npx sequelize migration:create --name=nome-da-tabela
+npx sequelize db:migrate
