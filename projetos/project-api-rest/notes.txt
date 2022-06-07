@@ -15,3 +15,9 @@ npm i -D sequelize-cli -> para criar um banco de dados e gerar modelos, migraÃ§Ã
 comandos:
 npx sequelize migration:create --name=nome-da-tabela
 npx sequelize db:migrate
+
+ssh + ip server -> para starta o servidor
+
+
+JWT
+npm i jwtwebtoken

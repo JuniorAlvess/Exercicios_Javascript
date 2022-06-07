@@ -45,9 +45,15 @@ export default class User extends Model {
     });
 
     this.addHook('beforeSave', async (user) => {
-      // o segundo parametro é o tamanho do salt
-      user.password_hash = await bcryptjs.hash(user.password, 8);
+      // o segundo parâmetro é o tamanho do salt
+      if (user.password) {
+        user.password_hash = await bcryptjs.hash(user.password, 8);
+      }
     });
     return this;
+  }
+
+  passwordIsValid(password) {
+    return bcryptjs.compare(password, this.password_hash);
   }
 }
