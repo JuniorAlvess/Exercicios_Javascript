@@ -15,9 +15,14 @@ npm i -D sequelize-cli -> para criar um banco de dados e gerar modelos, migraç�
 comandos:
 npx sequelize migration:create --name=nome-da-tabela
 npx sequelize db:migrate
+npx sequelize seed:generate --name criar-usuarios
+npx sequelize db:seed:all
 
 ssh + ip server -> para starta o servidor
 
 
 JWT
 npm i jwtwebtoken
+
+
+npm i multer -> multer é utilizado para uploads de arquivos
