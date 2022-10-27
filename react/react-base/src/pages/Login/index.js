@@ -16,6 +16,8 @@ export default function Login() {
         Adipisci, ipsum. Nostrum veritatis necessitatibus labore atque,
         laudantium culpa commodi voluptate?
       </p>
+
+      <button type="button">Enviar</button>
     </Container>
   );
 }
