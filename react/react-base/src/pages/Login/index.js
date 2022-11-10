@@ -1,9 +1,19 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
 import { Title } from './styled';
 import { Container } from '../../styles/GlobalStyles';
 
 export default function Login() {
+  const dispatch = useDispatch();
+  const handleClick = (e) => {
+    e.preventDefault();
+
+    dispatch({
+      type: 'BOTAO_CLICADO',
+    });
+  };
+
   return (
     <Container>
       <Title>
@@ -17,7 +27,9 @@ export default function Login() {
         laudantium culpa commodi voluptate?
       </p>
 
-      <button type="button">Enviar</button>
+      <button type="button" onClick={(e) => handleClick(e)}>
+        Enviar
+      </button>
     </Container>
   );
 }
