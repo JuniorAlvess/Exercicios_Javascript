@@ -4,9 +4,9 @@ import { persistReducer } from 'redux-persist';
 export default (reducers) => {
   const persistedReducers = persistReducer(
     {
-      key: 'TRACT-BASE',
+      key: 'CONSUME-_API',
       storage,
-      whitelist: ['example'], // O que será salvo
+      whitelist: ['auth'],
     },
     reducers
   );
