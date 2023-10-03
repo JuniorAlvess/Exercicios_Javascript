@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 
 import { toast } from 'react-toastify';
 import { isEmail } from 'validator';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { get } from 'lodash';
 
 import { Container } from '../../styles/GlobalStyles';
 import { Form } from './styled';
+import Loading from '../../components/Loading';
 
 import * as actions from '../../store/modules/auth/actions';
 
@@ -15,7 +16,8 @@ export default function Login(props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const prevPath = get(props, 'location.state.prevath', 'prevPath');
+  const prevPath = get(props, 'location.state.prevPath', '/');
+  const isLoading = useSelector((state) => state.auth.isLoading);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -39,6 +41,7 @@ export default function Login(props) {
 
   return (
     <Container>
+      <Loading isLoading={isLoading} />
       <h1>Login</h1>
 
       <Form onSubmit={handleSubmit}>

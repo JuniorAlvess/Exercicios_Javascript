@@ -1,5 +1,6 @@
 import { call, put, all, takeLatest } from 'redux-saga/effects';
 import { toast } from 'react-toastify';
+import { get } from 'lodash';
 import * as actions from './actions';
 import * as types from '../types';
 
@@ -21,4 +22,13 @@ function* loginRequest({ payload }) {
   }
 }
 
-export default all([takeLatest(types.LOGIN_REQUEST, loginRequest)]);
+function persistRehydrate({ payload }) {
+  const token = get(payload, 'auth.token');
+  if (!token);
+  axios.defaults.headers.authorization = `Bearer ${token}`;
+}
+
+export default all([
+  takeLatest(types.LOGIN_REQUEST, loginRequest),
+  takeLatest(types.PERSIST_REHYDRATE, persistRehydrate),
+]);
