@@ -3,12 +3,12 @@ import { get } from 'lodash';
 import PropTypes from 'prop-types';
 import { isEmail, isInt, isFloat } from 'validator';
 import { toast } from 'react-toastify';
-
 import { useDispatch } from 'react-redux';
-
+import { FaUserCircle, FaEdit } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import { Container } from '../../styles/GlobalStyles';
 
-import { Form } from './styled';
+import { Form, ProfilePicture, Title } from './styled';
 import Loading from '../../components/Loading';
 import axios from '../../services/axios';
 import history from '../../services/history';
@@ -17,7 +17,7 @@ import * as actions from '../../store/modules/auth/actions';
 // eslint-disable-next-line react/prop-types
 export default function Aluno({ match }) {
   const dispatch = useDispatch();
-  const id = get(match, 'params.id', 0);
+  const id = get(match, 'params.id', '');
 
   const [nome, setNome] = useState('');
   const [sobrenome, setSobreNome] = useState('');
@@ -25,6 +25,7 @@ export default function Aluno({ match }) {
   const [email, setEmail] = useState('');
   const [peso, setPeso] = useState('');
   const [altura, setAltura] = useState('');
+  const [foto, setFoto] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -113,7 +114,7 @@ export default function Aluno({ match }) {
         setIsLoading(true);
         const { data } = await axios(`/alunos/${id}`);
         const Foto = get(data, 'Foto[0].url', '');
-        console.log(Foto);
+        setFoto(Foto);
 
         setNome(data.nome);
         setSobreNome(data.sobrenome);
@@ -139,7 +140,16 @@ export default function Aluno({ match }) {
   return (
     <Container>
       <Loading isLoading={isLoading} />
-      <h1>{id ? 'Editar aluno' : 'Novo Aluno'}</h1>
+      <Title>{id ? 'Editar aluno' : 'Novo Aluno'}</Title>
+
+      {id && (
+        <ProfilePicture>
+          {foto ? <img src={foto} alt={nome} /> : <FaUserCircle size={180} />}
+          <Link to={`/fotos/${id}`}>
+            <FaEdit size={24} />
+          </Link>
+        </ProfilePicture>
+      )}
 
       <Form onSubmit={handleSubmit}>
         <input
