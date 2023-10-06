@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { get } from 'lodash';
-import {toast} from 'react-toastify';
+import { toast } from 'react-toastify';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 
@@ -30,7 +30,7 @@ export default function Foto({ match }) {
 
     try {
       setIsLoading(true);
-      await axios.post('/alunos/foto', formData, {
+      await axios.post('/fotos/', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -43,9 +43,9 @@ export default function Foto({ match }) {
       const { status } = get(error, 'response', '');
       toast.error('Erro ao enviar a foto');
 
-      if(status === 401) dispatchEvent(actions.loginFailure());
+      if (status === 401) dispatch(actions.loginFailure());
     }
-  }
+  };
 
   useEffect(() => {
     async function getData() {
@@ -72,13 +72,13 @@ export default function Foto({ match }) {
       <Form>
         <label htmlFor="foto">
           {foto ? <img src={foto} alt="Foto" /> : 'Selecionar'}
-          <input type="file" name="foto" id="foto" onChange={handleChange}/>
+          <input type="file" name="foto" id="foto" onChange={handleChange} />
         </label>
       </Form>
     </Container>
   );
 }
 
-Fotos.propTypes: {
-  match: PropTypes.shape({}).isRequired
-}
+Foto.propTypes = {
+  match: PropTypes.shape({}).isRequired,
+};
